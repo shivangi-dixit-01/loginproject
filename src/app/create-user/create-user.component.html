@@ -1,0 +1,25 @@
+<h1>Create User</h1>
+<form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+        <label for='firstName'>First Name</label>
+        <input type="text" formControlName="name" class="form-control"
+        [ngClass]="{'is-invalid': submitted && formControlnames.name.errors }">
+        <div *ngIf="submitted && formControlnames.name.errors" 
+        class="invalid-feedback">
+            <div *ngIf="formControlnames.name.errors.required">Required Name</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for='password'>Last Name</label>
+        <input type="text" formControlName="lastName" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for='username'>User Name</label>
+        <input type="text" formControlName="username" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for='password'>Password</label>
+        <input type="text" formControlName="password" class="form-control">
+    </div>
+    <button type="Submit" class="btn btn-primary">Submit</button>
+</form>
